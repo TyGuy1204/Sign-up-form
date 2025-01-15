@@ -62,5 +62,24 @@
             </div>
         </div>
     </div>
+    <script>
+        let password = document.querySelector('#input5'); 
+        let confirmPassword = document.querySelector('#input6');
+        
+        function validatePasswordMatch() { 
+            if (password.value !== confirmPassword.value) {
+                confirmPassword.setCustomValidity('Passwords do not match.');
+            } 
+            else { 
+                confirmPassword.setCustomValidity(''); 
+            } 
+        }
+
+        const createAccount = document.querySelector('.create-account');
+        createAccount.addEventListener('click', () => {
+            validatePasswordMatch();
+        });
+
+    </script>
 </body>
 </html>
